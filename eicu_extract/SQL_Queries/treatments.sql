@@ -1,3 +1,4 @@
+SET search_path TO eicu_crd;
 SELECT
   i.uniquePID                                     as subject_id,
   i.patientHealthSystemStayID                     as hadm_id,

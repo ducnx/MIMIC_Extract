@@ -1,3 +1,4 @@
+SET search_path TO eicu_crd;
 SELECT
   i.uniquePID                 as subject_id,
   i.patientHealthSystemStayID as hadm_id,
@@ -34,7 +35,7 @@ SELECT
   vap.pvr                     as pvr,
   vap.pvri                    as pvri
 FROM (
-    vitalPeriodic vp FULL OUTER JOIN vitalAperiodic vap ON
+    vitalperiodic vp FULL OUTER JOIN vitalaperiodic vap ON
       vp.patientUnitStayID = vap.patientUnitStayID
       AND vp.observationOffset = vap.observationOffset
 )
